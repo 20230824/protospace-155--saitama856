@@ -1,5 +1,5 @@
 class PrototypesController < ApplicationController
-  before_action :move_to_session, except: [:index]
+  before_action :move_to_session, except: [:index, :show]
 
   def index
     @prototypes = Prototype.all
@@ -16,6 +16,10 @@ class PrototypesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @prototype = Prototype.find(params[:id])
   end
 
   private
