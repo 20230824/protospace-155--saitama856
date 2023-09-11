@@ -1,5 +1,5 @@
 class PrototypesController < ApplicationController
-  before_action :move_to_session, except: [:index]
+  before_action :move_to_session, except: [:index, :show]
 
   def index
     @prototypes = Prototype.all
