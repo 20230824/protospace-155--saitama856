@@ -1,6 +1,10 @@
 class PrototypesController < ApplicationController
   before_action :move_to_session, except: [:index]
 
+  def index
+    @prototypes = Prototype.all
+  end
+
   def new
     @prototype = Prototype.new
   end
